@@ -48,8 +48,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,       KC_Q,            KC_W,        SFT_T(KC_E),        LGUI_T(KC_R), KC_T,                  KC_Y,        RGUI_T(KC_U), SFT_T(KC_I), KC_O,    KC_P,                    KC_DEL,
       KC_ESC,       LT(_PROG, KC_A), KC_S,        LT(_CONTROL, KC_D), KC_F,         KC_G,                  KC_H,        KC_J,         KC_K,        KC_L,    LT(_PROG, KC_SEMICOLON), LT(_CONTROL, KC_QUOT),
       KC_LSFT,      CTL_Z,           KC_X,        KC_C,               LSG_T(KC_V),  KC_B,                  KC_N,        RSG_T(KC_M),  KC_COMM,     KC_DOT,  CTL_SLS,                 KC_RSFT,
-      RCTL(KC_QUOT),KC_LEFT_ALT,     KC_LEFT,     KC_RGHT,            KC_SPC,                              KC_ENT,      KC_SPC,       KC_UP,       KC_DOWN, KC_LBRC,                 KC_RBRC,
-      KC_BSPC,      KC_PGDN,         KC_PGUP,                                                              KC_BSPC,     S(KC_INS),    KC_HOME,     KC_END
+      RCTL(KC_QUOT),KC_LEFT_ALT,     KC_LEFT,     KC_RGHT,            KC_SPC,       KC_ENT,                KC_SPC,      KC_UP,        KC_DOWN,     KC_LBRC, KC_RBRC,
+      KC_BSPC,      KC_DEL,          KC_PGDN,     KC_PGUP,                                                 KC_HOME,     KC_END,       KC_DEL
   ),
 
   [_PROG] = LAYOUT(
@@ -57,18 +57,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______,      RCS(KC_4),       S(KC_MINS),  F_CBRL,             F_CBRR,       KC_CAPS,              KC_GRAVE,     S(KC_2),     S(KC_3),    F_PIPE,   KC_DEL,                   _______,
       KC_BSPC,      RCS(KC_5),       KC_MINS,     F_RBRL,             F_RBRR,       S(KC_6),              S(KC_4),      F_SBRL,      F_SBRR,     F_TILD,   F_EQL,                    _______,
       _______,      RCS(KC_6),       S(KC_EQL),   KC_BACKSLASH,       KC_SLASH,     F_ABRL,               F_ABRR,       S(KC_QUOT),  KC_QUOT,    S(KC_7),  S(KC_8),                  _______,
-      _______,      _______,         _______,     _______,            _______,                            _______,      _______,     _______,    _______,  _______,                  _______,
-      _______,      _______,         _______,                                                             _______,      _______,     _______,    _______
+      _______,      _______,         _______,     _______,            _______,      _______,              _______,      _______,     _______,    _______,  _______,
+      _______,      _______,         _______,     _______,                                                _______,      _______,     _______
   ),
-
 
   [_CONTROL] = LAYOUT(
       RGB_M_B,      RGB_M_R,         UG_PREV,     UG_NEXT,            UG_VALU,      UG_NEXT,               _______,      _______,     _______,    _______,  _______,                 KC_PSCR,
       _______,      KC_1,            KC_2,        KC_3,               KC_4,         KC_5,                  KC_LEFT,      KC_DOWN,     KC_UP,      KC_RGHT,  RCTL(KC_F),              _______,
       _______,      _______,         _______,     _______,            _______,      _______,               KC_BSPC,      MS_BTN1,     MS_BTN3,    MS_BTN2,  DRGSCRL,                 CW_TOGG,
-      _______,      KC_6,            KC_7,        KC_8,               KC_9,         KC_0,                  _______,      KC_INS,       S(KC_INS), _______,  _______,                 _______,
-      _______,      _______,         _______,     _______,            KC_ESC,                              MS_BTN2,      LOWCPI,      _______,    _______,  _______,                 _______,
-      _______,      _______,         _______,                                                              _______,      KC_MNXT,     KC_MPLY,    KC_MPRV
+      _______,      KC_6,            KC_7,        KC_8,               KC_9,         KC_0,                  _______,      KC_INS,      S(KC_INS),  _______,  _______,                 _______,
+      _______,      _______,         _______,     _______,            LOWCPI,       MS_BTN2,               _______,      _______,     _______,    _______,  _______,
+      _______,      _______,         _______,     _______,                                                 KC_MNXT,      KC_MPLY,     KC_MPRV
   ),
 
   [_GAMG] = LAYOUT(
@@ -76,8 +75,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______,     KC_Q,             KC_W,        KC_E,               KC_R,         KC_T,                 KC_Y,         LSG_T(KC_U), KC_I,       KC_O,     RGUI_T(KC_P),             _______,
       KC_CAPS,     KC_A,             KC_S,        KC_D,               KC_F,         KC_G,                 KC_H,         KC_J,        KC_K,       KC_L,     LT(_PROG, KC_SEMICOLON),  _______,
       KC_LSFT,     KC_Z,             KC_X,        KC_C,               KC_V,         KC_B,                 KC_N,         KC_M,        KC_COMM,    KC_DOT,   CTL_SLS,                  _______,
-      KC_LCTL,     _______,          _______,     _______,            KC_SPC,                             _______,      _______,     _______,    KC_RBRC,  _______,                  _______,
-      _______,     _______,          _______,                                                             _______,      _______,     _______,    _______
+      KC_LCTL,     _______,          _______,     _______,            KC_SPC,       KC_ENT,               _______,      _______,     _______,    KC_RBRC,  _______,
+      _______,     _______,          _______,     _______,                                                _______,      _______,     _______
   )
 };
 
@@ -132,17 +131,17 @@ void pointing_device_init_user(void) {
 
 
 const rgblight_segment_t PROGMEM std_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 23, HSV_BLUE},
-    {23, 44, HSV_BLUE}
+    {0, 32, HSV_BLUE},
+    {33, 66, HSV_BLUE}
 );
 const rgblight_segment_t PROGMEM prog_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 44, HSV_ORANGE}
+    {0, 67, HSV_ORANGE}
 );
 const rgblight_segment_t PROGMEM control_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 44, HSV_GREEN}
+    {0, 67, HSV_GREEN}
 );
 const rgblight_segment_t PROGMEM gaming_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 44, HSV_RED}
+    {0, 67, HSV_RED}
 );
 
 const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(

@@ -36,8 +36,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define WS2812_DI_PIN D1
 
-#define RGBLIGHT_LED_COUNT 44
-#define RGBLED_SPLIT {23, 21}
+#define RGBLIGHT_LED_COUNT 67
+#define RGBLED_SPLIT {33, 34}
 
 #define RGBLIGHT_LAYERS
 #define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
